@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="head" inherit_id="website.assets_frontend">
+            <xpath expr="/t" position="inside">
+                <script type="text/javascript" src="/website_contact_us/static/src/js/contact_us.js"/>
+                <link rel="stylesheet" href="/website_contact_us/static/src/css/styles.css"/> 
+            </xpath>
+        </template>
+        
+        <template id="contactus" name="Contact Form" inherit_id="website_crm.contactus_form">
+           <xpath expr="//form[@action='/website_form/']" position="replace">
+                <div>
+                   <form action="/website_form/" method="post" data-model_name="crm.lead" data-success_page="/page/website_crm.contactus_thanks" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="group">
+                                    <input class="input-form" type="text" required="True" id="username" name="contact_name"/>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label class="vedor-label">Name</label>
+                                </div>
+                                <div class="group">
+                                    <input class="input-form" type="text" name="phone" required="True"/>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label class="vedor-label">Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="group">
+                                     <input class="input-form" type="text" required="True" id="email" name="email_from"/>
+                                     <span class="highlight"></span>
+                                     <span class="bar"></span>
+                                     <label class="vedor-label">Email</label>
+                                 </div>
+                                 <div class="group">
+                                     <input class="input-form" type="text" name="partner_name" required="True"/>
+                                     <span class="highlight"></span>
+                                     <span class="bar"></span>
+                                     <label class="vedor-label">Company Name</label>
+                                 </div>
+                            </div>
+                            <div class="col-md-12">
+                                 <div class="group">
+                                     <input class="input-form" type="text" name="name" required="True"/>
+                                     <span class="highlight"></span>
+                                     <span class="bar"></span>
+                                     <label class="vedor-label">Subject</label>
+                                 </div>
+                             </div>
+                             <div class="col-md-12">
+                                 <div class="group">
+                                     <input class="input-form" type="textarea" name="description"/>
+                                     <span class="highlight"></span>
+                                     <span class="bar"></span>
+                                     <label class="vedor-label">Description</label>
+                                 </div>
+                             </div>
+                             <div class="text-center">
+                                <button class="btn btn-primary btn-lg o_website_form_send">Send</button>
+                                <span id="o_website_form_result"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>
+
