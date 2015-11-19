@@ -9,10 +9,9 @@
         </template>
         
         <template id="contactus" name="Contact Form" inherit_id="website_crm.contactus_form">
-           <xpath expr="//form[@action='/website_form/']" position="replace">
+           <xpath expr="//form[@action='/crm/contactus']" position="replace">
                 <div>
-                   <form action="/website_form/" method="post" data-model_name="crm.lead" data-success_page="/page/website_crm.contactus_thanks" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data">
-                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                   <form action="/crm/contactus" method="post" class="form-horizontal mt32" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="group">
@@ -59,8 +58,7 @@
                                  </div>
                              </div>
                              <div class="text-center">
-                                <button class="btn btn-primary btn-lg o_website_form_send">Send</button>
-                                <span id="o_website_form_result"></span>
+                                 <button class="btn btn-primary btn-lg">Send</button>
                             </div>
                         </div>
                     </form>
