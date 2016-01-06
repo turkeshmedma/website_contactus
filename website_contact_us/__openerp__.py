@@ -29,6 +29,7 @@
 {
     'name': 'Website Contact Us Form',
     'version': '1.0',
+    "license": "AGPL-3",
     'author': 'Medma Infomatix',
     'category': 'Website',
     'website': 'http://www.medma.net',
